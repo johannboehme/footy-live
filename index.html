@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Footy Live</title>
+    <style>
+      :root {
+        --text: #232323;
+        --text-dim: #7b7b7b;
+        --bg: #ffffff;
+        --surface: #eeeeee;
+        --accent: #fef991;
+        --live: #c02020;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --text: #ffffff;
+          --text-dim: #8a8a8a;
+          --bg: #111111;
+          --surface: #1a1a1a;
+          --live: #ff5a5a;
+        }
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: 'FK Grotesk Neue', -apple-system, 'Segoe UI', Roboto, sans-serif;
+        letter-spacing: -0.01em;
+        padding: 20px;
+        max-width: 560px;
+        margin: 0 auto;
+      }
+      header { margin-bottom: 24px; }
+      h1 { font-size: 34px; font-weight: 700; letter-spacing: -0.02em; }
+      .sub { color: var(--text-dim); font-size: 13px; margin-top: 4px; }
+      .offline { color: var(--live); }
+      h2 {
+        font-size: 11px; font-weight: 500; letter-spacing: 0.04em;
+        text-transform: uppercase; color: var(--text-dim);
+        margin: 24px 0 8px;
+      }
+      .card {
+        background: var(--surface);
+        border-radius: 12px;
+        padding: 16px;
+        margin-bottom: 8px;
+      }
+      .game .teams div {
+        display: flex; justify-content: space-between;
+        font-size: 16px; padding: 2px 0;
+      }
+      .game .teams .won { font-weight: 600; }
+      .game .teams b { font-variant-numeric: tabular-nums; }
+      .game .meta { color: var(--text-dim); font-size: 13px; margin-top: 6px; }
+      .live { color: var(--live); font-weight: 600; }
+      select {
+        width: 100%; padding: 10px 12px; font-size: 16px;
+        border-radius: 8px; border: none;
+        background: var(--bg); color: var(--text);
+      }
+      .hint { color: var(--text-dim); font-size: 13px; margin-top: 8px; }
+      table { width: 100%; border-collapse: collapse; font-size: 14px; }
+      th { text-align: left; color: var(--text-dim); font-weight: 500; padding: 4px 6px; }
+      td { padding: 4px 6px; }
+      td:nth-child(3), td:nth-child(4), td:nth-child(5),
+      th:nth-child(3), th:nth-child(4), th:nth-child(5) { text-align: right; font-variant-numeric: tabular-nums; }
+      tr.fav td { font-weight: 600; }
+      footer { margin: 32px 0 16px; color: var(--text-dim); font-size: 13px; }
+      footer p { margin-bottom: 8px; }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
